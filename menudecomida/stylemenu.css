@@ -1,0 +1,148 @@
+body {
+    margin: 0;  
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+}
+
+.navbar {
+    background-color: #111827; /* fondo oscuro */
+    color: white;
+    padding: 10px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-left .logo {
+    height: 60px;
+}
+
+.navbar-center a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar-center a:hover {
+    color: #fbbf24; /* amarillo tipo KFC */
+}
+
+.navbar-right .telefono {
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin: 0.8rem 0 0.4rem;
+}
+
+.card span {
+    font-weight: bold;
+    color: #ff005d;
+}
+
+.add-btn {
+    margin-top: 10px;
+    background: #ff005d;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #e60050;
+}
+
+.navbar img {
+    width: 100px;  /* Ajusta el tamaño según lo necesites */
+    height: auto;   /* Mantiene la proporción */
+    display: block; /* Evita espacios extras */
+    margin-bottom: 20px; /* Espacio debajo del logo */ 
+}
+
+.hero {
+    position: relative;
+    background-image: url('../imagenes/fondonavbar.png'); /* pon tu imagen de fondo aquí */
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px); /* desenfoque del fondo */
+    background-color: rgba(0, 0, 0, 0.5); /* oscurece un poco para que resalte el texto */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-logo {
+    height: 130px;
+    margin-bottom: 20px;
+}
+
+.hero h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin: 10px 0 0;
+}
