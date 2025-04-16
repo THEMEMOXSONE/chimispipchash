@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fdf2e9;
+    color: #333;
+}
+
+header {
+    background-color: #FFCC00;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.volver-btn {
+    text-decoration: none;
+    background: #333;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.volver-btn:hover {
+    background: #555;
+}
+
+.carrito-container {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.carrito-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.carrito-item img {
+    width: 80px;
+    border-radius: 8px;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.item-info p {
+    margin: 4px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.item-info span {
+    font-weight: bold;
+    color: #222;
+}
+
+.total-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.total-container h2 {
+    margin: 0 0 20px;
+    font-size: 26px;
+}
+
+.total-container button {
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#confirmarBtn {
+    background: #FF6B00;
+    color: white;
+}
+
+#confirmarBtn:hover {
+    background: #ff7f26;
+}
+
+#vaciarBtn {
+    background: #ddd;
+}
+
+#vaciarBtn:hover {
+    background: #bbb;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

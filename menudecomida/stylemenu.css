@@ -49,50 +49,65 @@ body {
     padding: 2rem;
 }
 
-.card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    text-align: center;
-    padding: 1rem;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: scale(1.03);
-}
-
-.card img {
+.card-container {
+    perspective: 1000px;
+  }
+  
+  .card {
+    width: 250px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
     width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.card h3 {
-    margin: 0.8rem 0 0.4rem;
-}
-
-.card span {
-    font-weight: bold;
-    color: #ff005d;
-}
-
-.add-btn {
-    margin-top: 10px;
-    background: #ff005d;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .card-front {
+    text-align: center;
+  }
+  
+  .card-front img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .add-btn, .confirm-btn {
+    background-color: #E63946;
     color: white;
     border: none;
-    padding: 0.6rem 1rem;
+    padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-}
-
-.add-btn:hover {
-    background: #e60050;
-}
-
+  }
+  
+  .add-btn:hover, .confirm-btn:hover {
+    background-color: #FF4040;
+  }
+  
+  /* Cuando la clase 'flipped' se aplica */
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+  
 .navbar img {
     width: 100px;  /* Ajusta el tamaño según lo necesites */
     height: auto;   /* Mantiene la proporción */
@@ -133,16 +148,66 @@ body {
 .hero-logo {
     height: 130px;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.2s;
 }
 
 .hero h3 {
     font-size: 20px;
     font-weight: 400;
     margin: 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.5s;
 }
 
 .hero h1 {
     font-size: 50px;
     font-weight: 800;
     margin: 10px 0 0;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.8s;
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.carrito-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #FFCC00;
+    color: #000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s, background-color 0.3s;
+    z-index: 1000;
+}
+
+.carrito-btn:hover {
+    background-color: #FFD633;
+    transform: scale(1.1);
 }
