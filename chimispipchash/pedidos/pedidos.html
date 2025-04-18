@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registrar y Seleccionar Pedido</title>
+</head>
+<body>
+
+<h1>Registrar y Seleccionar Pedido</h1>
+
+<button id="crearPedido">Registrar Nuevo Pedido</button>
+<br><br>
+
+<form method="post" action="./pedidos/procesar_pedido.php">
+  <label for="idpedido">ID de Pedido:</label>
+  <select id="idpedido" name="idpedido">
+  </select>
+  <br><br>
+  <input type="submit" value="Seleccionar">
+</form>
+
+<script>
+fetch('./pedidos/obtener_pedidos.php')
+  .then(response => response.json())
+  .then(data => {
+    const select = document.getElementById('idpedido');
+    select.innerHTML = ""; 
+    data.forEach(pedido => {
+      const option = document.createElement('option');
+      option.value = pedido.idpedido;
+      option.text = pedido.idpedido;
+      select.appendChild(option);
+    });
+  });
+
+document.getElementById('crearPedido').addEventListener('click', () => {
+  fetch('./pedidos/crear_pedido.php')
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        alert("Error: " + data.error); 
+      } else {
+        const select = document.getElementById('idpedido');
+        const option = document.createElement('option');
+        option.value = data.idpedido;
+        option.text = data.idpedido;
+        select.appendChild(option);
+        alert(`¡Pedido creado!\nID: ${data.idpedido}\nFecha: ${data.fecha}\nHora: ${data.hora}`); // Confirmación visual
+      }
+    })
+    .catch(error => {
+      alert("Error al comunicarse con el servidor: " + error.message);
+    });
+});
+</script>
+
+</body>
+</html>
