@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Elemento</title>
+    <link rel="stylesheet" href="styleEliminar.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <nav class="navbar-center">
+                <a href="../menudecomida/mcmenu.html">Menu</a>
+                <a href="#">Agregar</a>
+                <a href="#">Revisar</a>
+                <a href="#">Actualizar</a>
+                <a href="#">Eliminar</a>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Eliminar Elementos</h1>
+
+    <form id="eliminarForm">
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="">Seleccione</option>
+            <option value="producto">Producto</option>
+            <option value="usuario">Usuario</option>
+        </select><br><br>
+
+        <label for="id">ID a eliminar:</label>
+        <input type="number" id="id" name="id" required><br><br>
+
+        <input type="submit" value="Eliminar">
+    </form>
+
+    <p id="mensaje"></p>
+
+    <script src="jsEliminar.js"></script>
+</body>
+</html>
