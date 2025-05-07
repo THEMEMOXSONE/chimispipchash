@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #D3B786;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    width: 600px;
+    background: #A71D31;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info-box {
+    width: 50%;
+    background: #FFFF;
+    padding: 40px;
+}
+
+.info-box img {
+    width: 100px;  /* Ajusta el tamaño según lo necesites */
+    height: auto;   /* Mantiene la proporción */
+    display: block; /* Evita espacios extras */
+    margin-bottom: 20px; /* Espacio debajo del logo */ 
+}
+
+.info-box h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #d23535c5;
+}
+
+.info-box p {
+    font-size: 0.9rem;
+    color: #3f1bcfed;
+}
+
+.login-box {
+    width: 50%;
+    background: #770D15;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #666;
+    padding: 10px;
+    color: white;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-bottom: 2px solid #ff005d;
+}
+
+button {
+    background: #ff005d;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #e60050;
+}
+
+.login-box P{
+    color: #ffff;
+}
+
+.mensaje {
+    display: none;  /* Oculta el mensaje de error por defecto */
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

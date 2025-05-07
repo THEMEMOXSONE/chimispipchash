@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="styleAgregar.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="navbar-container">
+
+            <nav class="navbar-center">
+                <a href="../menudecomida/mcmenu.html">menu</a>
+                <a href="#">Agregar</a>
+                <a href="#">Revisar</a>
+                <a href="#">Actualizar</a>
+                <a href="#">Eliminar</a>
+            </nav>
+
+        </div>
+    </header>
+
+<h1>Agregar Nuevo Producto</h1>
+
+<form id="productoForm">
+    <label for="nombrep">Nombre:</label>
+    <input type="text" id="nombrep" name="nombrep" required><br><br>
+
+    <label for="categoria">Categoría:</label>
+    <input type="text" id="categoria" name="categoria" required><br><br>
+
+    <label for="precio">Precio:</label>
+    <input type="number" id="precio" name="precio" step="0.01" required><br><br>
+
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" required><br><br>
+
+    <input type="submit" value="Agregar Producto">
+</form>
+
+<p id="mensaje"></p>
+
+<script src="jsAgregar.js"></script>
+
+</body>
+</html>
